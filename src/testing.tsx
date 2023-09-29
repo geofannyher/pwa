@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const Testing = () => {
     const [isListening, setIsListening] = useState(false);
@@ -45,11 +46,21 @@ const Testing = () => {
     };
     return (
         <div>
+            <div style={{ padding: '20px' }}>
+                <Link to='/'>
+                    <button>
+                        Kembali Ke Home
+                    </button>
+                </Link>
+            </div>
             <div>
                 <button onClick={startListening} onMouseDown={startListening} onMouseUp={stopListening}>
                     {isListening ? 'Listening...' : 'Start Listening'}
                 </button>
-                <p>Recognized Text: {recognizedText}</p>
+                <p>Recognized Text: </p>
+                <p>
+                    {recognizedText}
+                </p>
             </div>
         </div>
     )

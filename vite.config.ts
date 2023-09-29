@@ -3,17 +3,17 @@ import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
+  plugins: [react(),
     VitePWA({
-      registerType: "autoUpdate",
+      registerType: "prompt",
       workbox: {
         clientsClaim: true,
         skipWaiting: true,
         globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
       },
-      // devOptions: {
-      //   enabled: true,
-      // },
+      devOptions: {
+        enabled: true,
+      },
       manifest: {
         name: "My Awesome App",
         short_name: "MyApp",
@@ -24,12 +24,12 @@ export default defineConfig({
         start_url: "/",
         orientation: 'portrait',
         icons: [{
-          src: '/public/eccilg.png',
+          src: '/eccilg.png',
           sizes: '192x192',
           type: 'image/png',
         },
         {
-          src: '/public/eccibig.png',
+          src: '/eccibig.png',
           sizes: '512x512',
           type: 'image/png',
         }

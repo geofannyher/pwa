@@ -6,7 +6,7 @@ const Testing = () => {
         listening,
         browserSupportsSpeechRecognition
     } = useSpeechRecognition();
-    const startListening = () => SpeechRecognition.startListening({ continuous: true });
+    const startListening = () => SpeechRecognition.startListening({ language: 'id', continuous: true });
 
     if (!browserSupportsSpeechRecognition) {
         return <span>Browser doesn't support speech recognition.</span>;

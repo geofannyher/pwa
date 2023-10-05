@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Dashboard from './dashboard'
 import Testing from './testing'
-
 function App() {
 
   return (
